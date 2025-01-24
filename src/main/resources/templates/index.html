@@ -6,12 +6,11 @@
     <title th:content="#{title}"></title>
 </head>
 <body>
-<h1 th:content="#{title}"></h1>
+<h1 th:text="#{title}"></h1>
 
-<form class="form-signin" method="post" th:action="@{/register}" th:if="not ${param.success}"
-      th:object="${register}">
+<form class="form-signin" method="post" th:action="@{/register}" th:object="${register}">
     <div class="form-group">
-        <label class="col-form-label" for="tenantname">Name:</label>
+        <label class="col-form-label" for="tenantname"><span th:text="#{name}"></span></label>
         <span
                 class="text-danger" th:errors="*{tenantname}"
                 th:if="${#fields.hasErrors('tenantname')}"></span>
@@ -30,15 +29,15 @@
     <div>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="captcha" id="inlineRadio1" value="car">
-            <label class="form-check-label" for="inlineRadio1">CAR</label>
+            <label class="form-check-label" for="inlineRadio1" th:text="#{captcha.car}"></label>
         </div>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="captcha" id="inlineRadio2" value="star">
-            <label class="form-check-label" for="inlineRadio2">STAR</label>
+            <label class="form-check-label" for="inlineRadio2" th:text="#{captcha.star}"></label>
         </div>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="captcha" id="inlineRadio3" value="bicycle">
-            <label class="form-check-label" for="inlineRadio3">BIKE</label>
+            <label class="form-check-label" for="inlineRadio3" th:text="#{captcha.bike}"></label>
         </div>
     </div>
     <span
@@ -46,7 +45,7 @@
             th:if="${#fields.hasGlobalErrors()}"></span>
 
     <button class="btn btn-lg btn-primary btn-block" id="register"
-            type="submit">Submit
+            type="submit"><span th:text="#{buttonlabel}"></span>
     </button>
 </form>
 </body>

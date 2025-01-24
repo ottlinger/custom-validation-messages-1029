@@ -27,9 +27,7 @@ public class RegisterController {
             return new ModelAndView("index.html");
         }
 
-        ModelAndView targetView = new ModelAndView("redirect:/success");
-        // targetView.addObject("initname", serviceResult.get("name"));
-        return targetView;
+        return new ModelAndView("redirect:/success");
     }
 
     private boolean isCaptchaWrong(String captcha) {
