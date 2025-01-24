@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Just a test</title>
+    <title th:content="#{title}"></title>
 </head>
 <body>
-<h1>Just select something</h1>
+<h1 th:content="#{title}"></h1>
 
 <form class="form-signin" method="post" th:action="@{/register}" th:if="not ${param.success}"
       th:object="${register}">
