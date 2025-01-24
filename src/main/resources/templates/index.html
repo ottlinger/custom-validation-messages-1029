@@ -11,12 +11,12 @@
 <form class="form-signin" method="post" th:action="@{/register}" th:object="${register}">
     <div class="form-group">
         <label class="col-form-label" for="tenantname"><span th:text="#{name}"></span></label>
-        <span
+        <b><span
                 class="text-danger" th:errors="*{tenantname}"
-                th:if="${#fields.hasErrors('tenantname')}"></span>
+                th:if="${#fields.hasErrors('tenantname')}"></span></b>
         <input autocomplete="tenantname" autofocus class="form-control" id="tenantname" name="tenantname"
-               required th:field="*{tenantname}"
-               placeholder="Enter something"
+               required th:field="*{tenantname}" size="90"
+               th:placeholder="#{name.placeholder}"
                type="text">
     </div>
     <hr/>
