@@ -1,5 +1,6 @@
 # custom-validation-messages-1029
-Example repo to show a Thymeleaf SpringBoot problem
+Example repo to show a Thymeleaf SpringBoot problem reported as
+https://github.com/thymeleaf/thymeleaf/issues/1029
 
 ## Build and Run
 
