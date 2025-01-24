@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" class="notranslate" translate="no" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Just a test</title>
+</head>
+<body>
+<h1>Just select something</h1>
+
+<form class="form-signin" method="post" th:action="@{/register}" th:if="not ${param.success}"
+      th:object="${register}">
+    <div class="form-group">
+        <label class="col-form-label" for="tenantname">Name:</label>
+        <span
+                class="text-danger" th:errors="*{tenantname}"
+                th:if="${#fields.hasErrors('tenantname')}"></span>
+        <input autocomplete="tenantname" autofocus class="form-control" id="tenantname" name="tenantname"
+               required th:field="*{tenantname}"
+               placeholder="Enter something"
+               type="text">
+    </div>
+    <hr/>
+    <span
+            class="text-danger" th:errors="*{captcha}"
+            th:if="${#fields.hasErrors('captcha')}"></span>
+    <div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="captcha" id="inlineRadio1" value="car">
+            <label class="form-check-label" for="inlineRadio1">CAR</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="captcha" id="inlineRadio2" value="star">
+            <label class="form-check-label" for="inlineRadio2">STAR</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="captcha" id="inlineRadio3" value="bicycle">
+            <label class="form-check-label" for="inlineRadio3">BIKE</label>
+        </div>
+    </div>
+    <span
+            class="text-danger" th:errors="*{global}"
+            th:if="${#fields.hasGlobalErrors()}"></span>
+
+    <button class="btn btn-lg btn-primary btn-block" id="register"
+            type="submit">Register
+    </button>
+</form>
+</body>
+</html>
