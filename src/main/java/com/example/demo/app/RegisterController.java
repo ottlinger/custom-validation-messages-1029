@@ -27,12 +27,18 @@ public class RegisterController {
             return new ModelAndView("index.html");
         }
 
-        ModelAndView targetView = new ModelAndView("redirect:/register?success");
+        ModelAndView targetView = new ModelAndView("redirect:/success");
         // targetView.addObject("initname", serviceResult.get("name"));
         return targetView;
     }
 
     private boolean isCaptchaWrong(String captcha) {
-        return !"CAR".equals(captcha);
+        return !"car".equals(captcha);
     }
+
+    @RequestMapping("/success")
+    public ModelAndView success(Model model) {
+        return new ModelAndView("success.html");
+    }
+
 }
