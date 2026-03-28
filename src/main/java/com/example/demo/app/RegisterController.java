@@ -22,7 +22,9 @@ public class RegisterController {
     public ModelAndView processRegisterForm(@Valid @ModelAttribute("register") final RegistrationForm form, final BindingResult result) {
         if (result.hasErrors() || isCaptchaWrong(form.getCaptcha())) {
             if (isCaptchaWrong(form.getCaptcha())) {
-                result.addError(new FieldError("register", "captcha", "wrongcaptcha"));
+                // this is the wrong constructor: new FieldError("register", "captcha", "wrongcaptcha")
+                // as defaultMessage really means a message and not an i18n key that needs to be resolved.
+                result.addError(new FieldError("register", "captcha", null, false, new String[]{"wrongcaptcha"}, null, null));
             }
             return new ModelAndView("index.html");
         }
