@@ -1,4 +1,4 @@
-# custom-validation-messages-1029
+# 2025-01-25: custom-validation-messages-1029
 Example repo to show a Thymeleaf SpringBoot problem reported as
 https://github.com/thymeleaf/thymeleaf/issues/1029 and a StackOverflow-[question](https://stackoverflow.com/questions/79386749/custom-fielderror-error-message-is-not-translated-and-i18n-key-is-shown-instead)
 
